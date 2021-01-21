@@ -7,9 +7,9 @@
 
 ## Properties
 
-| Property | Attribute | Description | Type   | Default      |
-| -------- | --------- | ----------- | ------ | ------------ |
-| `date`   | --        |             | `Date` | `new Date()` |
+| Property | Attribute | Description | Type     | Default     |
+| -------- | --------- | ----------- | -------- | ----------- |
+| `date`   | `date`    |             | `string` | `undefined` |
 
 
 ## Dependencies

@@ -17,7 +17,7 @@ export class NxlpTag {
 
   render() {
     let classes = `tag ${this.category}`;
-    classes += this.edit ? 'show-remove' : '';
+    classes += this.edit ? ' show-remove' : '';
 
     return (
       <span class={classes}>

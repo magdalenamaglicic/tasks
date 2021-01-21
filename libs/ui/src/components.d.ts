@@ -13,7 +13,7 @@ export namespace Components {
         "type"?: BtnType;
     }
     interface NxlpDate {
-        "date"?: Date;
+        "date"?: string;
     }
     interface NxlpTag {
         "category": TagCategory;
@@ -91,7 +91,7 @@ declare namespace LocalJSX {
         "type"?: BtnType;
     }
     interface NxlpDate {
-        "date"?: Date;
+        "date"?: string;
     }
     interface NxlpTag {
         "category": TagCategory;
