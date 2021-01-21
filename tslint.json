@@ -4,9 +4,21 @@
     "node_modules/codelyzer"
   ],
   "linterOptions": {
-    "exclude": ["**/*"]
+    "exclude": [
+      "node_modules",
+      "*.d.ts"
+    ]
   },
   "rules": {
+    "template-accessibility-alt-text": true,
+    "template-accessibility-elements-content": true,
+    "template-accessibility-label-for": true,
+    "template-accessibility-tabindex-no-positive": true,
+    "template-accessibility-table-scope": true,
+    "template-click-events-have-key-events": true,
+    "template-mouse-events-have-key-events": true,
+    "template-no-autofocus": true,
+    "template-no-distracting-elements": true,
     "arrow-return-shorthand": true,
     "callable-types": true,
     "class-name": true,
