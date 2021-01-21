@@ -1,13 +1,17 @@
 export type BackgroundColor = 'app-bg-color-primary' | 'bg-color-secondary';
+
 export type StateColor = 'app-state-color-focus' | 'app-state-color-danger';
+
 export type BorderColor =
   | 'app-border-color'
   | 'app-border-color-focus'
   | 'app-border-color-invalid';
+
 export type TextColor =
   | 'app-text-primary'
   | 'app-text-secondary'
   | 'app-text-invalid';
+
 export type ThemeColor =
   | 'color-green'
   | 'color-blue'

@@ -34,7 +34,7 @@ storiesOf('Design System/Colors', module)
   `
   );
 
-storiesOf('Design System/Fonts', module)
+storiesOf('Design System/Typography', module)
   .addParameters({ layout: 'centered' })
   .add(
     'Weights',
@@ -43,6 +43,17 @@ storiesOf('Design System/Fonts', module)
           <p style="font-weight:300">Light</p>
           <p style="font-weight:400">Regular</p>
           <p style="font-weight:500">Medium</p>
+      </story>
+    `
+  )
+  .add(
+    'Sizes',
+    () => `
+      <story>
+          <p class="text-xs">Extra small</p>
+          <p class="text-s">Small</p>
+          <p class="text-m">Medium</p>
+          <p class="text-l">Large</p>
       </story>
     `
   );

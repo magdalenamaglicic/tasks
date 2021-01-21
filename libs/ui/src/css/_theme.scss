@@ -14,7 +14,7 @@
   --app-border-color-focus: var(--app-state-color--focus);
   --app-border-color-invalid: var(--app-state-color--danger);
 
-  // Text
+  // Text colors
   --app-text-primary: var(--color-neutral-10);
   --app-text-secondary: var(--color-neutral-25);
   --app-text-invalid: var(--app-state-color-danger);
@@ -24,9 +24,72 @@
 html {
   body {
     background: var(--bg-color-primary);
+    color: var(--color-neutral-10);
   }
 }
 
+// Text
+$html-font-size: 16px;
+
+@function stripUnit($value) {
+  @return $value / ($value * 0 + 1);
+}
+
+@function rem($pxValue) {
+  @return #{stripUnit($pxValue) / stripUnit($html-font-size)}rem;
+}
+
+$textSizes: (
+  'xs': rem(12px),
+  's': rem(14px),
+  'm': rem(16px),
+  'l': rem(20px),
+);
+
+$textLineHeights: (
+  'xs': rem(18px),
+  's': rem(22px),
+  'm': rem(24px),
+  'l': rem(30px),
+);
+
+@function convertRGB($color) {
+  @return unquote('#{red($color)}, #{green($color)}, #{blue($color)}');
+}
+
+@each $name, $lineHeight in $textLineHeights {
+  $varName: --text-line-#{$name};
+
+  :root {
+    #{$varName}: #{$lineHeight};
+  }
+}
+
+@each $name, $size in $textSizes {
+  $varName: --text-size-#{$name};
+
+  :root {
+    #{$varName}: #{$size};
+  }
+}
+
+@mixin text($name) {
+  font-size: var(--text-size-#{$name});
+  line-height: var(--text-line-#{$name});
+
+  @if ($name == 'xs') {
+    color: var(--color-neutral-25);
+    text-transform: uppercase;
+  }
+}
+
+@each $name, $size in $textSizes {
+  .text-#{$name} {
+    @include text($name);
+  }
+}
+
+// Colors
 $colors: (
   'green': (
     base: #34aa44,
@@ -66,17 +129,13 @@ $neutrals: (
   ),
 );
 
-@function convertRGB($color) {
-  @return unquote('#{red($color)}, #{green($color)}, #{blue($color)}');
-}
-
-// Colors
 @each $name, $color in $colors {
   $varName: --color-#{$name};
 
   $baseColor: map-get($color, base);
 
   $shadeColor: map-get($color, shade);
+  $darkColor: map-get($color, dark);
   $tintColor: map-get($color, tint);
 
   :root {
@@ -86,14 +145,20 @@ $neutrals: (
       #{$varName}-shade: color.scale($baseColor, $lightness: -12%);
     }
 
-    #{$varName}: #{$baseColor};
-    #{$varName}-rgb: convertRGB($baseColor);
+    @if ($darkColor) {
+      #{$varName}-dark: $darkColor;
+    } @else {
+      #{$varName}-dark: color.scale($baseColor, $lightness: -5%);
+    }
 
     @if ($tintColor) {
       #{$varName}-tint: $tintColor;
     } @else {
       #{$varName}-tint: color.change($baseColor, $lightness: 80%);
     }
+
+    #{$varName}: #{$baseColor};
+    #{$varName}-rgb: convertRGB($baseColor);
   }
 
   .color-#{$name} {
