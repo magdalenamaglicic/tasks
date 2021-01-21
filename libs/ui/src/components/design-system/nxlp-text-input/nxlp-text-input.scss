@@ -1,0 +1,35 @@
+nxlp-text-input {
+  display: flex;
+  flex-direction: column;
+
+  input {
+    padding: 8.5px 16.5px;
+    border-radius: 4px;
+    border: solid 1px var(--color-neutral-50);
+
+    &::placeholder {
+      color: var(--color-neutral-50);
+    }
+
+    &:focus {
+      border-color: var(--color-blue);
+    }
+  }
+
+  div.title {
+    height: 20px;
+    color: var(--color-neutral-25);
+    margin-bottom: 7px;
+  }
+
+  &.error {
+    input {
+      border-color: var(--color-red);
+    }
+
+    span.error {
+      color: var(--color-red);
+      margin-top: 4px;
+    }
+  }
+}

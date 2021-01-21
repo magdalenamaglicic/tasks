@@ -12,12 +12,15 @@ enum TagCategory {
   styleUrl: 'nxlp-tag.scss',
 })
 export class NxlpTag {
-  @Prop() category: TagCategory;
+  @Prop() category!: TagCategory;
   @Prop() edit: boolean;
 
   render() {
+    let classes = `tag ${this.category}`;
+    classes += this.edit ? 'show-remove' : '';
+
     return (
-      <span class={`tag ${this.category} ${this.edit && 'show-remove'}`}>
+      <span class={classes}>
         <span class="text-xs">{this.category.toUpperCase()}</span>
         {this.edit && (
           <button class="icon-container">

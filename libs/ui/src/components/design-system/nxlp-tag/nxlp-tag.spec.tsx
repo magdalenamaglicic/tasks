@@ -5,13 +5,15 @@ describe('nxlp-tag', () => {
   it('renders', async () => {
     const { root } = await newSpecPage({
       components: [NxlpTag],
-      html: '<nxlp-tag></nxlp-tag>',
+      html: '<nxlp-tag category="family"></nxlp-tag>',
     });
     expect(root).toEqualHtml(`
-      <nxlp-tag>
-        <div>
-          Hello, World! I'm
-        </div>
+      <nxlp-tag category="family">
+        <span class="family tag">
+          <span class="text-xs">
+            FAMILY
+          </span>
+        </span>
       </nxlp-tag>
     `);
   });

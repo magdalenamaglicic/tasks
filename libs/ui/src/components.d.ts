@@ -16,6 +16,12 @@ export namespace Components {
         "category": TagCategory;
         "edit": boolean;
     }
+    interface NxlpTextInput {
+        "error"?: string;
+        "inputTitle": string;
+        "required"?: boolean;
+        "value": string;
+    }
     interface TdnUiIcon {
         /**
           * Specifies the label to use for accessibility. Defaults to the icon name.
@@ -49,6 +55,12 @@ declare global {
         prototype: HTMLNxlpTagElement;
         new (): HTMLNxlpTagElement;
     };
+    interface HTMLNxlpTextInputElement extends Components.NxlpTextInput, HTMLStencilElement {
+    }
+    var HTMLNxlpTextInputElement: {
+        prototype: HTMLNxlpTextInputElement;
+        new (): HTMLNxlpTextInputElement;
+    };
     interface HTMLTdnUiIconElement extends Components.TdnUiIcon, HTMLStencilElement {
     }
     var HTMLTdnUiIconElement: {
@@ -58,6 +70,7 @@ declare global {
     interface HTMLElementTagNameMap {
         "nxlp-button": HTMLNxlpButtonElement;
         "nxlp-tag": HTMLNxlpTagElement;
+        "nxlp-text-input": HTMLNxlpTextInputElement;
         "tdn-ui-icon": HTMLTdnUiIconElement;
     }
 }
@@ -68,8 +81,14 @@ declare namespace LocalJSX {
         "type"?: BtnType;
     }
     interface NxlpTag {
-        "category"?: TagCategory;
+        "category": TagCategory;
         "edit"?: boolean;
+    }
+    interface NxlpTextInput {
+        "error"?: string;
+        "inputTitle"?: string;
+        "required"?: boolean;
+        "value"?: string;
     }
     interface TdnUiIcon {
         /**
@@ -93,6 +112,7 @@ declare namespace LocalJSX {
     interface IntrinsicElements {
         "nxlp-button": NxlpButton;
         "nxlp-tag": NxlpTag;
+        "nxlp-text-input": NxlpTextInput;
         "tdn-ui-icon": TdnUiIcon;
     }
 }
@@ -102,6 +122,7 @@ declare module "@stencil/core" {
         interface IntrinsicElements {
             "nxlp-button": LocalJSX.NxlpButton & JSXBase.HTMLAttributes<HTMLNxlpButtonElement>;
             "nxlp-tag": LocalJSX.NxlpTag & JSXBase.HTMLAttributes<HTMLNxlpTagElement>;
+            "nxlp-text-input": LocalJSX.NxlpTextInput & JSXBase.HTMLAttributes<HTMLNxlpTextInputElement>;
             "tdn-ui-icon": LocalJSX.TdnUiIcon & JSXBase.HTMLAttributes<HTMLTdnUiIconElement>;
         }
     }

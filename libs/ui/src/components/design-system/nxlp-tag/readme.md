@@ -7,10 +7,10 @@
 
 ## Properties
 
-| Property   | Attribute  | Description | Type                                                                                      | Default     |
-| ---------- | ---------- | ----------- | ----------------------------------------------------------------------------------------- | ----------- |
-| `category` | `category` |             | `TagCategory.Family \| TagCategory.Important \| TagCategory.Personal \| TagCategory.Work` | `undefined` |
-| `edit`     | `edit`     |             | `boolean`                                                                                 | `undefined` |
+| Property                | Attribute  | Description | Type                                                                                      | Default     |
+| ----------------------- | ---------- | ----------- | ----------------------------------------------------------------------------------------- | ----------- |
+| `category` _(required)_ | `category` |             | `TagCategory.Family \| TagCategory.Important \| TagCategory.Personal \| TagCategory.Work` | `undefined` |
+| `edit`                  | `edit`     |             | `boolean`                                                                                 | `undefined` |
 
 
 ## Dependencies
