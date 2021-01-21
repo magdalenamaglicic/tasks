@@ -21,12 +21,14 @@
 ### Used by
 
  - [nxlp-button](../nxlp-button)
+ - [nxlp-date](../nxlp-date)
  - [nxlp-tag](../nxlp-tag)
 
 ### Graph
 ```mermaid
 graph TD;
   nxlp-button --> tdn-ui-icon
+  nxlp-date --> tdn-ui-icon
   nxlp-tag --> tdn-ui-icon
   style tdn-ui-icon fill:#f9f,stroke:#333,stroke-width:4px
 ```

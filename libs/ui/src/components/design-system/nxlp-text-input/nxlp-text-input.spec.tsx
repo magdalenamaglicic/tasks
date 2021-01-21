@@ -9,9 +9,9 @@ describe('nxlp-text-input', () => {
     });
     expect(root).toEqualHtml(`
       <nxlp-text-input>
-        <span class="text-xs title">
+        <div class="text-xs title">
           <span></span>
-        </span>
+        </div>
         <input class="text-m" type="text" value="">
       </nxlp-text-input>
     `);
