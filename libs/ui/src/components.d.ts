@@ -12,6 +12,10 @@ export namespace Components {
         "text": string;
         "type"?: BtnType;
     }
+    interface NxlpTag {
+        "category": TagCategory;
+        "edit": boolean;
+    }
     interface TdnUiIcon {
         /**
           * Specifies the label to use for accessibility. Defaults to the icon name.
@@ -39,6 +43,12 @@ declare global {
         prototype: HTMLNxlpButtonElement;
         new (): HTMLNxlpButtonElement;
     };
+    interface HTMLNxlpTagElement extends Components.NxlpTag, HTMLStencilElement {
+    }
+    var HTMLNxlpTagElement: {
+        prototype: HTMLNxlpTagElement;
+        new (): HTMLNxlpTagElement;
+    };
     interface HTMLTdnUiIconElement extends Components.TdnUiIcon, HTMLStencilElement {
     }
     var HTMLTdnUiIconElement: {
@@ -47,6 +57,7 @@ declare global {
     };
     interface HTMLElementTagNameMap {
         "nxlp-button": HTMLNxlpButtonElement;
+        "nxlp-tag": HTMLNxlpTagElement;
         "tdn-ui-icon": HTMLTdnUiIconElement;
     }
 }
@@ -55,6 +66,10 @@ declare namespace LocalJSX {
         "icon"?: string;
         "text"?: string;
         "type"?: BtnType;
+    }
+    interface NxlpTag {
+        "category"?: TagCategory;
+        "edit"?: boolean;
     }
     interface TdnUiIcon {
         /**
@@ -77,6 +92,7 @@ declare namespace LocalJSX {
     }
     interface IntrinsicElements {
         "nxlp-button": NxlpButton;
+        "nxlp-tag": NxlpTag;
         "tdn-ui-icon": TdnUiIcon;
     }
 }
@@ -85,6 +101,7 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "nxlp-button": LocalJSX.NxlpButton & JSXBase.HTMLAttributes<HTMLNxlpButtonElement>;
+            "nxlp-tag": LocalJSX.NxlpTag & JSXBase.HTMLAttributes<HTMLNxlpTagElement>;
             "tdn-ui-icon": LocalJSX.TdnUiIcon & JSXBase.HTMLAttributes<HTMLTdnUiIconElement>;
         }
     }

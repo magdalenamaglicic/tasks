@@ -78,7 +78,6 @@ $textLineHeights: (
   line-height: var(--text-line-#{$name});
 
   @if ($name == 'xs') {
-    color: var(--color-neutral-25);
     text-transform: uppercase;
   }
 }

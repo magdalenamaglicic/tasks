@@ -1,0 +1,50 @@
+@use "sass:color";
+
+$tagColors: (
+  'family': --color-green,
+  'work': --color-purple,
+  'important': --color-orange,
+  'personal': --color-blue,
+);
+
+.tag {
+  height: 24px;
+  padding: 3px 10px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 4px;
+  color: var(--color-neutral-100) !important;
+
+  tdn-ui-icon {
+    margin-right: 3px;
+  }
+
+  &.show-remove {
+    padding: 3px 2px 3px 13px;
+  }
+
+  .icon-container {
+    color: var(--color-neutral-100);
+    padding: 2px 5px;
+    cursor: pointer;
+  }
+
+  @each $name, $color in $tagColors {
+    &.#{$name} {
+      background-color: var(#{$color});
+
+      .icon-container {
+        background-color: var(#{$color});
+
+        &:hover {
+          background-color: var(#{$color}-dark);
+        }
+
+        &:active {
+          background-color: var(#{$color}-shade);
+        }
+      }
+    }
+  }
+}

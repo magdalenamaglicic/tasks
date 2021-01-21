@@ -1,7 +1,7 @@
 import { storiesOf } from '@storybook/html';
 
 storiesOf('Design System/Buttons', module)
-  .addParameters({ layout: 'padded' })
+  .addParameters({ layout: 'centered' })
   .add(
     'Primary',
     () => `

@@ -1,6 +1,6 @@
 @use "sass:color";
 
-button {
+nxlp-button button {
   height: 38px;
   padding: 8px 20px;
   display: flex;
@@ -38,8 +38,9 @@ button {
 
   &.secondary {
     background-color: var(--color-neutral-100);
-    border-color: rgba(0, 0, 0, 0.2);
-    border-width: 1px;
+    border-color: rgba(0, 0, 0, 0.2) !important;
+    border-width: 1px !important;
+    border-style: solid !important;
 
     &:hover {
       background-color: rgba(0, 0, 0, 0.05);
