@@ -9,11 +9,6 @@ nxlp-button button {
   border-radius: 4px;
   cursor: pointer;
 
-  &:active,
-  &:focus {
-    outline: none;
-  }
-
   tdn-ui-icon {
     margin-right: 11px;
   }
