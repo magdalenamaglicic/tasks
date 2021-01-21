@@ -1,0 +1,66 @@
+@use "sass:color";
+
+button {
+  height: 38px;
+  padding: 8px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 4px;
+  cursor: pointer;
+
+  &:active,
+  &:focus {
+    outline: none;
+  }
+
+  tdn-ui-icon {
+    margin-right: 11px;
+  }
+
+  &.has-icon {
+    padding: 8px 20px 8px 13px;
+  }
+
+  &.primary {
+    border: none;
+    color: var(--color-neutral-100);
+    background-color: var(--color-green);
+
+    &:hover {
+      background-color: var(--color-green-dark);
+    }
+
+    &:active {
+      background-color: var(--color-green-shade);
+    }
+  }
+
+  &.secondary {
+    background-color: var(--color-neutral-100);
+    border-color: rgba(0, 0, 0, 0.2);
+    border-width: 1px;
+
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.05);
+    }
+
+    &:active {
+      background-color: rgba(0, 0, 0, 0.1);
+    }
+  }
+
+  &.danger {
+    border: none;
+    color: var(--color-neutral-100);
+    background-color: var(--color-red);
+
+    &:hover {
+      background-color: var(--color-red-dark);
+    }
+
+    &:active {
+      background-color: var(--color-red-shade);
+    }
+  }
+}

@@ -7,6 +7,11 @@
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 import { IconColor, IconSizes } from "./components/design-system/icon/icon.interface";
 export namespace Components {
+    interface NxlpButton {
+        "icon"?: string;
+        "text": string;
+        "type"?: BtnType;
+    }
     interface TdnUiIcon {
         /**
           * Specifies the label to use for accessibility. Defaults to the icon name.
@@ -28,6 +33,12 @@ export namespace Components {
     }
 }
 declare global {
+    interface HTMLNxlpButtonElement extends Components.NxlpButton, HTMLStencilElement {
+    }
+    var HTMLNxlpButtonElement: {
+        prototype: HTMLNxlpButtonElement;
+        new (): HTMLNxlpButtonElement;
+    };
     interface HTMLTdnUiIconElement extends Components.TdnUiIcon, HTMLStencilElement {
     }
     var HTMLTdnUiIconElement: {
@@ -35,10 +46,16 @@ declare global {
         new (): HTMLTdnUiIconElement;
     };
     interface HTMLElementTagNameMap {
+        "nxlp-button": HTMLNxlpButtonElement;
         "tdn-ui-icon": HTMLTdnUiIconElement;
     }
 }
 declare namespace LocalJSX {
+    interface NxlpButton {
+        "icon"?: string;
+        "text"?: string;
+        "type"?: BtnType;
+    }
     interface TdnUiIcon {
         /**
           * Specifies the label to use for accessibility. Defaults to the icon name.
@@ -59,6 +76,7 @@ declare namespace LocalJSX {
         "size"?: IconSizes;
     }
     interface IntrinsicElements {
+        "nxlp-button": NxlpButton;
         "tdn-ui-icon": TdnUiIcon;
     }
 }
@@ -66,6 +84,7 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            "nxlp-button": LocalJSX.NxlpButton & JSXBase.HTMLAttributes<HTMLNxlpButtonElement>;
             "tdn-ui-icon": LocalJSX.TdnUiIcon & JSXBase.HTMLAttributes<HTMLTdnUiIconElement>;
         }
     }

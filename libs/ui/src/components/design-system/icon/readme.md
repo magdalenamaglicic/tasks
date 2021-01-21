@@ -16,6 +16,19 @@
 | `size`      | `size`       | The size of the icon: xxs through xl                                                        | `"l" \| "m" \| "s" \| "xl" \| "xs"`                                                                                                                                                                                                                                                        | `undefined` |
 
 
+## Dependencies
+
+### Used by
+
+ - [nxlp-button](../nxlp-button)
+
+### Graph
+```mermaid
+graph TD;
+  nxlp-button --> tdn-ui-icon
+  style tdn-ui-icon fill:#f9f,stroke:#333,stroke-width:4px
+```
+
 ----------------------------------------------
 
 *Built with [StencilJS](https://stenciljs.com/)*
